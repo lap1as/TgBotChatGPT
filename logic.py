@@ -1,6 +1,5 @@
 import openai
 
-
 def ai_response(user_text):
     response = openai.Completion.create(
         engine="text-davinci-003",
@@ -12,3 +11,5 @@ def ai_response(user_text):
     )
     generated = response.choices[0].text
     return generated
+
+
