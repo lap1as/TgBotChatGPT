@@ -25,7 +25,7 @@ async def send_welcome(message: types.Message):
         max_tokens=1024,
         n=1,
         stop=None,
-        temperature=0.8
+        temperature=1
     )
     generated = response.choices[0].text
     await message.answer(text=generated)
