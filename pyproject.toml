@@ -10,6 +10,7 @@ openai = "^0.26.4"
 aiogram = "^2.24"
 pandas = "^1.5.3"
 python-dotenv = "^0.21.1"
+langdetect = "^1.0.9"
 
 [tool.poetry.dev-dependencies]
 
