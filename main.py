@@ -1,9 +1,11 @@
 import os
 import logging
 import openai
-import json
+#import json
 from aiogram import Bot, Dispatcher, executor, types
 from langdetect import detect
+
+from logic import ai_response
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -20,17 +22,9 @@ dp = Dispatcher(bot)
 async def send_welcome(message: types.Message):
     lang = detect(message.text)
     print(f"[+]",{message.from_id},{lang},":",message.text)
-    prompt = (f"{message.text}")
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
-        max_tokens=4000,
-        n=1,
-        stop=None,
-        temperature=1,
-    )
-    generated = response.choices[0].text
-    await message.answer(text=generated)
+    user_text = (f"{message.text}")
+    await message.answer(text=ai_response(user_text))
+    print("[+] Reply has been sent!")
     
     
 if __name__ == '__main__':
