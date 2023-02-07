@@ -5,7 +5,7 @@ description = ""
 authors = ["lap1as <kuzukoleg12@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 openai = "^0.26.4"
 aiogram = "^2.24"
 pandas = "^1.5.3"
